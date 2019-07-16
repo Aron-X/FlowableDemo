@@ -2,85 +2,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.6.RELEASE</version>
-        <relativePath/>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.fa.cim</groupId>
-    <artifactId>mds-release-parent</artifactId>
+    <groupId>com.aron</groupId>
+    <artifactId>flowable</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>release-dto</module>
-        <module>release-stream</module>
-        <module>release-main</module>
-        <module>release-common</module>
-        <module>release-service</module>
+        <module>holiday-request</module>
     </modules>
-    <name>OM Release Service</name>
-    <description>standalone release micro service</description>
+
+    <name>Flowable</name>
+    <description>Flowable practice</description>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-        <druid-version>1.1.10</druid-version>
-        <bytetcc-version>0.5.0-ALPHA11</bytetcc-version>
-        <fastjson-version>1.2.31</fastjson-version>
-        <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
-        <curator.version>2.11.1</curator.version>
-        <kafka-clients.version>2.1.0</kafka-clients.version>
-        <spring-boot-admin.version>2.0.3</spring-boot-admin.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-framework</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-recipes</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka-clients</artifactId>
-                <version>${kafka-clients.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fa.cim</groupId>
-                <artifactId>release-dto</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fa.cim</groupId>
-                <artifactId>release-stream</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fa.cim</groupId>
-                <artifactId>release-main</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fa.cim</groupId>
-                <artifactId>release-common</artifactId>
+                <groupId>com.aron</groupId>
+                <artifactId>holiday-request</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
@@ -110,36 +56,19 @@
 
     <repositories>
         <repository>
-            <id>cimNexus</id>
-            <url>http://182.140.146.203:8881/repository/maven-public/</url>
+            <id>ali</id>
+            <name>Ali Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
         </repository>
     </repositories>
-    <distributionManagement>
-        <repository>
-            <id>cimNexus</id>
-            <name>cimNexus RELEASES Repository</name>
-            <url>http://182.140.146.203:8881/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>cimNexus</id>
-            <name>cimNexus SNAPSHOT Repository</name>
-            <url>http://182.140.146.203:8881/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
     <pluginRepositories>
         <pluginRepository>
-            <id>cimNexus</id>
-            <name>cimNexus PLUGIN Repository</name>
-            <url>http://182.140.146.203:8881/repository/maven-public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
+            <id>ali</id>
+            <name>Ali Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

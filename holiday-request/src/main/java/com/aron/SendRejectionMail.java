@@ -4,17 +4,17 @@ import org.flowable.engine.delegate.DelegateExecution;
 import org.flowable.engine.delegate.JavaDelegate;
 
 /**
- * CallExternalSystemDelegate
+ * SendRejectionMail
  * <p></p>
  *
  * @author aron
  * @date 2019-07-16 13:59
  */
-public class CallExternalSystemDelegate implements JavaDelegate {
+public class SendRejectionMail implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) {
-        System.out.println("Calling the external system for employee "
+        System.out.println("Send out rejection email for employee "
                 + delegateExecution.getVariable("employee"));
     }
 }
